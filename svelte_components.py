@@ -122,7 +122,7 @@ components["CossimOverlayMultiSeparate"] = """
   <div class="title" style="z-index: 15">{(titles == undefined) ? '' : titles[n_img]}</div>
   <div class="image" style="background-image: url({image_url}); z-index: -10; width: {width}px; height: {height}px;"></div>
   <div class="overlay" style="z-index: 10; width: {width}px; height: {height}px; left: {width/2-Ns[n_img][1]/2}px; top:{height/2-Ns[n_img][0]}px">
-    <div class="overlay-inner" style="width: {Ns[n_img][1]}px; height: {Ns[n_img][0]}px; transform: scale({height/Ns[n_img][0]}); background-image: url({(pos == undefined)? '' : masks_urls[n_img]});  background-position: {(pos == undefined)? '' : -Ns[n_img][1]*Math.round(Ns[n_img][1]/Ns[pos[0]][1]*pos[1])}px {(pos == undefined)? '' : -Ns[n_img][0]*Math.round(Ns[n_img][0]/Ns[pos[0]][0]*pos[2])}px; opacity: 0.7;">
+    <div class="overlay-inner" style="width: {Ns[n_img][1]}px; height: {Ns[n_img][0]}px; transform: scale({height/Ns[n_img][0]}); background-image: url({(pos == undefined)? '' : masks_urls[n_img]});  background-position: {(pos == undefined)? '' : -Ns[n_img][1]*Math.floor(Ns[n_img][1]/Ns[pos[0]][1]*pos[1])}px {(pos == undefined)? '' : -Ns[n_img][0]*Math.floor(Ns[n_img][0]/Ns[pos[0]][0]*pos[2])}px; opacity: 0.7;">
     </div>
   </div>
   <div class="event-catcher" 
