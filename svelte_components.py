@@ -121,13 +121,13 @@ components["CossimOverlayMultiSeparate"] = """
 <div class="container" style="width: {width}px; height: {height}px; float: left; margin: 5px;">
   <div class="title" style="z-index: 15">{(titles == undefined) ? '' : titles[n_img]}</div>
   <div class="image" style="background-image: url({image_url}); z-index: -10; width: {width}px; height: {height}px;"></div>
-  <div class="overlay" style="z-index: 10; width: {width}px; height: {height}px; left: {width/2-Ns[n_img]/2}px; top:{height/2-Ns[n_img]/2}px">
-    <div class="overlay-inner" style="width: {Ns[n_img]}px; height: {Ns[n_img]}px; transform: scale({size/Ns[n_img]}); background-image: url({(pos == undefined)? '' : masks_urls[n_img]});  background-position: {(pos == undefined)? '' : -Ns[n_img]*Math.round(Ns[n_img]/Ns[pos[0]]*pos[1])}px {(pos == undefined)? '' : -Ns[n_img]*Math.round(Ns[n_img]/Ns[pos[0]]*pos[2])}px; opacity: 0.7;">
+  <div class="overlay" style="z-index: 10; width: {width}px; height: {height}px; left: {width/2-Ns[n_img][1]/2}px; top:{height/2-Ns[n_img][0]}px">
+    <div class="overlay-inner" style="width: {Ns[n_img][1]}px; height: {Ns[n_img][0]}px; transform: scale({height/Ns[n_img][0]}); background-image: url({(pos == undefined)? '' : masks_urls[n_img]});  background-position: {(pos == undefined)? '' : -Ns[n_img][1]*Math.round(Ns[n_img][1]/Ns[pos[0]][1]*pos[1])}px {(pos == undefined)? '' : -Ns[n_img][0]*Math.round(Ns[n_img][0]/Ns[pos[0]][0]*pos[2])}px; opacity: 0.7;">
     </div>
   </div>
   <div class="event-catcher" 
        style="z-index: 20; width: {width}px; height: {height}px;"
-       on:mousemove="set({pos: [n_img, Math.floor(Ns[n_img]*event.offsetX/width), Math.floor(Ns[n_img]*event.offsetY/height)]})"
+       on:mousemove="set({pos: [n_img, Math.floor(Ns[n_img][1]*event.offsetX/width), Math.floor(Ns[n_img][0]*event.offsetY/height)]})"
        on:mouseout="set({pos: undefined})">
   </div>
 </div>
