@@ -33,12 +33,18 @@ def get_cossim_grids(acts):
 
 
 def add_color_index(arr, stride, color=YELLOW):
+    '''
+    Args:
+        stride (tuple): (stride in 0th dim, stride in 1st dim), modification to allow for rectangular images
+    '''
     assert isinstance(arr, np.ndarray)
     assert len(arr.shape) == 2
     arr = np.tile(arr[:,:,None], (1, 1, 3))
-    for i in range(int(arr.shape[0]/stride)):
-        for j in range(int(arr.shape[1]/stride)):
-            arr[i*stride+i,j*stride+j] = color
+    stride_i = stride[0]
+    stride_j = stride[1]
+    for i in range(int(arr.shape[0]/stride_i)):
+        for j in range(int(arr.shape[1]/stride_j)):
+            arr[i*stride_i+i,j*stride_j+j] = color
     return arr
 
 
