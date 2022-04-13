@@ -32,7 +32,7 @@ def get_cossim_grids(acts):
   return grids
 
 
-def add_color_index(arr, stride, color=YELLOW):
+def add_color_index(arr, stride, color=PINK):
     '''
     Args:
         stride (tuple): (stride in 0th dim, stride in 1st dim), modification to allow for rectangular images
