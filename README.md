@@ -1,3 +1,6 @@
+# Note
+This repository is a version of https://github.com/ruthcfong/interactive_overlay with added support for rectangular images.
+
 # Interactive Similarity Overlays
 Ruth Fong, Alexander Mordvintsev, Andrea Vedaldi, and Chris Olah
 
